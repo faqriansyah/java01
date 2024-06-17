@@ -1,0 +1,1 @@
+Buffered menyimpan datanya di memori, jadi aplikasi mengambil ke memori alih-alih mengambil langsung dari alirand data filenya, ini membuat prosesnya menjadi jauh lebih cepat
