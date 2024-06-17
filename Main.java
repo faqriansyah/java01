@@ -1,14 +1,10 @@
-import classes.*;
+import classes.NotGeneric;
 
-public class Main extends Annotation {
-
-    @Override public void SayHi() {
-        System.out.println("Halo Gaes");
-    }
-    
+public class Main {
     public static void main(String[] args) {
-        new Main().SayHi();
-        tes();
+        NotGeneric ng = new NotGeneric();
+        ng.setData(555);
+        int val = (int) ng.getData();
+        System.out.println(val);
     }
 }
-
