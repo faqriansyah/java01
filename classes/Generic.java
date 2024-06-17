@@ -1,13 +1,13 @@
 package classes;
 
 public class Generic<T> {
+    private T data1;
+
     public Generic(T x) {
-        if(x instanceof String) {
-            System.out.println("This  data is a String");
-        } else if (x instanceof Integer) {
-            System.out.println("This data is a Integer");
-        } else {
-            System.out.println("What the hell is that");
-        }
+        this.data1 = x;
+    }
+
+    public T data1() {
+        return data1;
     }
 }
