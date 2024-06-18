@@ -1,13 +1,14 @@
-import classes.Generic;
-import classes.NotGeneric;
+import classes.*;
 
 public class Main {
     public static void main(String[] args) {
-        Generic<String> generic = new Generic<>("Iyan");
+        Mygeneric mygen = new Mygeneric<String>("lalalala");
+        generate(mygen);
         
-        Generic<String> objgen = generic;
+    }
 
-
+    public static void generate(Mygeneric<? extends Object> data) {
+        System.out.println(data.getData());
     }
 
 }
