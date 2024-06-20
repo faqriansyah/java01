@@ -1,14 +1,14 @@
-import classes.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Mygeneric mygen = new Mygeneric<String>("lalalala");
-        generate(mygen);
-        
+        Main mn = new Main();
+        mn.Second();
+
     }
 
-    public static void generate(Mygeneric<? extends Object> data) {
-        System.out.println(data.getData());
+    public void Second(){
+        System.out.println("allalalalaallala");
     }
-
 }
