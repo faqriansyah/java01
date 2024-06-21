@@ -1,5 +1,5 @@
 package covariance;
 
-public Buah {
+public class Buah {
     
 }
