@@ -3,9 +3,7 @@ package classes;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.ListIterator;
 
 public class ArrayListt {
     public static void main(String[] args) {
@@ -28,7 +26,7 @@ public class ArrayListt {
 
         // Iterator
 
-        Iterator semuaMakanan = food2.iterator();
+        Iterator<String> semuaMakanan = food2.iterator();
         while (semuaMakanan.hasNext())
             System.out.println(semuaMakanan.next());
 
