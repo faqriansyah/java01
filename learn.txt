@@ -1,0 +1,331 @@
+ArrayList dan LinkedList merupakan dua buah class collection yang merupakan implementasi dari interface List, dimana List menyediakan operasi-operasi untuk menambah, menghapus, mengakses, dan meng-iterasi data di dalam daftar.
+
+Mari kita mulai pembahasan dengan mengenal interface List terlebih dahulu
+
+Interface List
+Dideklarasikan sebagai berikut
+
+(kode)
+
+Interface List merupakan interface yang menyediakan kontrak untuk operasi-operasi terhadap elemen di daftar untuk kelas yang mengimplementasikannya. Beberapa method yang sering digunakan di List interface antara lain 
+
+add(E e)
+menambahkan elemen di dalam List 
+
+remove(int index)
+menghapus elemen di index tertentu
+
+get(int index)
+mendapatkan elemen di index tertentu
+
+size()
+mengembalikan jumlah elemen yang ada di dalam list
+
+isEmpty()
+memeriksa apakah list nya kosong
+
+clear()
+menghapus semua elemen di dalam list
+
+indexOf(Object o)
+mengembalikan index elemen pertama (jika ada elemen duplikat maka elemen pertama yang akan dikembalikan indexnya)
+
+lastIndexOf(Object o)
+mengembalikan index elemen terakhir
+
+Iterator
+Meng-iterasi seluruh elemen
+
+Mari kita coba bagaimana menggunakan semua method di atas
+
+(kode)
+
+List interface masih punya banyak method, bisa dibaca lengkapnya disini https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true
+
+Selanjutnya, ArrayList 
+
+ArrayList
+ArrayList menyimpan elemen dengan index sebagai basisnya, oleh karena itu disebut Array. 
+
+ArrayList bisa menyimpan semua jenis elemen, termasuk null. Juga mengizinkan elemen duplikat.
+
+Beberapa operasi dalam ArrayList berjalan dalam waktu yang konstant, ini artinya berapapun dan sebanyak apapun jumlah elemen maka waktu yang dibutuhkan tetap sama, operasi-operasi tersebut seperti _set, get, iterator, ListIterator, isEmpty, dan size_.
+
+Sementara untuk operasi remove, akan membutuhkan waktu yang tidak konstan, ini karena ketika sebuah elemen di hilangkan maka elemen di depannya harus digeser untuk mengisi ruang yang ditinggalkan elemen yang sudah dihapus.
+
+Selain memiliki metode-metode yang dimiliki interface List, ia juga memiliki  kemampuan untuk memperbesar ukuran Array yang digunakan untuk menyimpan elemen secara otomatis, namun akan memperlambat performanya ketika ia harus melakukan peningkatan kapasitas secara terus menerus. Maka sebaiknya dilakukan penambahan secara manual, atau sebaiknya jumlahnya lebih besar dari jumlah elemen yang akan disimpan
+
+ArrayList memiliki  kapasitas default sebesar 10, bisa dikembangkan lagi dengan menggunakan method ensureCapacity(), atau bisa dibuat kapasitas initialnya dengan menggunakan constructornya.
+
+Ini adalah contoh penggunaan arrayList :
+
+(kode)
+
+LinkedList
+
+-----------------------------------------------------
+
+Hey there! Today, we're diving into ArrayList and LinkedList, two cool classes in Java that help you manage collections of data. They both implement the List interface, which is like a blueprint for handling lists of stuff. Let's break it down!
+
+So, the List interface is like a contract that says, "Hey, if you implement me, you gotta have these methods." Here's how it looks:
+
+Some of the most used methods in the List interface are:
+
+add(E e): Adds an element to the list. 
+remove(int index): Kicks out the element at the specified index.
+get(int index): Grabs the element at the given index.
+size(): Tells you how many elements are in the list.
+isEmpty(): Checks if the list is empty. No elements? It’s true.
+clear(): Wipes out all elements in the list.
+indexOf(Object o): Finds the index of the first occurrence of the specified element.
+lastIndexOf(Object o): Finds the index of the last occurrence of the specified element.
+Iterator: Lets you loop through all the elements.
+
+Wanna see these methods in action? Check this out:
+
+There are a bunch more methods you can use. You can check them all out here: List interface masih punya banyak method, bisa dibaca lengkapnya disini https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true.
+
+An ArrayList is like a dynamic array. It stores elements by their index, so you can quickly jump to any element you want. It can hold all sorts of elements, even null, and it’s totally fine with duplicates.
+
+Some operations in an ArrayList are super fast and take the same amount of time no matter how many elements you've got. These include set, get, iterator, ListIterator, isEmpty, and size.
+
+But, When you remove an element, it can slow things down because the other elements have to shuffle over to fill the gap.
+
+ArrayList can automatically resize itself to hold more elements, but this resizing can slow things down if it happens too often. So, it's a good idea to set an initial capacity that’s big enough if you know how many elements you're gonna have.
+
+By default, an ArrayList starts with a capacity of 10. You can make it bigger using the ensureCapacity() method or by setting it in the constructor.
+
+Here’s how you roll with an ArrayList:
+
+
+
+
+
+
+-----------------========================------------
+
+Hey coders! Today, we're diving into ArrayList and LinkedList, two cool classes in Java that help you manage collections of data. They both implement the List interface, which is like a blueprint for handling lists of stuff. Let's break it down!
+
+**List Interface**
+So, the List interface is like a contract that says, "Hey, if you implement me, you gotta have these methods." Here's how the List interface declared:
+
+```
+public interface List<E>
+extends Collection<E>
+```
+
+Some of the most used methods in the List interface are:
+
+- add(E e): Adds an element to the list. 
+remove(int index): Kicks out the element at the specified index.
+- get(int index): Grabs the element at the given index.
+- size(): Tells you how many elements are in the list.
+- isEmpty(): Checks if the list is empty. No elements? It’s true.
+- clear(): Wipes out all elements in the list.
+- indexOf(Object o): Finds the index of the first occurrence of the specified element.
+- lastIndexOf(Object o): Finds the index of the last occurrence of the specified element.
+- Iterator: Lets you loop through all the elements.
+
+Wanna see these methods in action? Check this out:
+
+There are a bunch more methods you can use. You can check them all out here: {% embed https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true %}
+
+**ArrayList**
+An ArrayList is like a dynamic array. It stores elements by their index, so you can quickly jump to any element you want. It can hold all sorts of elements, even null, and it’s totally fine with duplicates.
+
+Some operations in an ArrayList are super fast and take the same amount of time no matter how many elements you've got. These include set, get, iterator, ListIterator, isEmpty, and size.
+
+But, When you remove an element, it can slow things down because the other elements have to shuffle over to fill the gap.
+
+ArrayList can automatically resize itself to hold more elements, but this resizing can slow things down if it happens too often. So, it's a good idea to set an initial capacity that’s big enough if you know how many elements you're gonna have.
+
+By default, an ArrayList starts with a capacity of 10. You can make it bigger using the ensureCapacity() method or by setting it in the constructor.
+
+Here’s how you roll with an ArrayList:
+
+
+Just like ArrayList, LinkedList is another class that implements the List interface. The main difference between them is how they store their elements.
+
+LinkedList stores elements in nodes, where each node knows about the next and previous node (with null for the first and last nodes).
+
+You can still use an index to get elements, but it’s not as efficient as ArrayList because it has to iterate from the start to the end to find the desired position, making it slower.
+
+Here's an example of how to use a LinkedList:
+
+When to Use ArrayList and LinkedList?
+ArrayList is perfect when you need a lot of random access operations since it’s super fast at getting elements by index. On the other hand, LinkedList is better for situations where you need to do a lot of adding and removing of elements.
+
+That’s it for now! Thanks for reading, and see you next time. Bye! 👋
+
+
+DONE :
+Hey coders! Today, we're diving into ArrayList and LinkedList, two cool classes in Java that help you manage collections of data. They both implement the List interface, which is like a blueprint for handling lists of stuff. Let's break it down!
+
+**List Interface**
+So, the List interface is like a contract that says, "Hey, if you implement me, you gotta have these methods." Here's how the List interface declared:
+
+```
+public interface List<E>
+extends Collection<E>
+```
+
+Some of the most used methods in the List interface are:
+
+- add(E e): Adds an element to the list. 
+- remove(int index): Kicks out the element at the specified index.
+- get(int index): Grabs the element at the given index.
+- size(): Tells you how many elements are in the list.
+- isEmpty(): Checks if the list is empty. No elements? It’s true.
+- clear(): Wipes out all elements in the list.
+- indexOf(Object o): Finds the index of the first occurrence of the specified element.
+- lastIndexOf(Object o): Finds the index of the last occurrence of the specified element.
+- Iterator: Lets you loop through all the elements.
+
+Wanna see these methods in action? Check this out:
+
+There are a bunch more methods you can use. You can check them all out here: {% embed https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true %}
+
+**ArrayList**
+An ArrayList is like a dynamic array. It stores elements by their index, so you can quickly jump to any element you want. It can hold all sorts of elements, even null, and it’s totally fine with duplicates.
+
+Some operations in an ArrayList are super fast and take the same amount of time no matter how many elements you've got. These include set, get, iterator, ListIterator, isEmpty, and size.
+
+But, When you remove an element, it can slow things down because the other elements have to shuffle over to fill the gap.
+
+ArrayList can automatically resize itself to hold more elements, but this resizing can slow things down if it happens too often. So, it's a good idea to set an initial capacity that’s big enough if you know how many elements you're gonna have.
+
+By default, an ArrayList starts with a capacity of 10. You can make it bigger using the ensureCapacity() method or by setting it in the constructor.
+
+Here’s how you roll with an ArrayList. Let's say we have a shopping list for a big party, and we're using ArrayList to manage it.
+
+```
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> shoppingList = new ArrayList<>();
+
+        // Adding items to the shopping list
+        shoppingList.add("Balloons");
+        shoppingList.add("Streamers");
+        shoppingList.add("Cake");
+        shoppingList.add("Ice Cream");
+        shoppingList.add("Soda");
+
+        System.out.println("Shopping list for the party:");
+        System.out.println(shoppingList);
+
+        // Accessing an item by index
+        String cake = shoppingList.get(2);
+        System.out.println("Gotta make sure we got the cake: " + cake);
+
+        // Checking if the list is empty
+        boolean isEmpty = shoppingList.isEmpty();
+        System.out.println("Is the shopping list empty? " + isEmpty);
+
+        // Checking the size of the list
+        int size = shoppingList.size();
+        System.out.println("Number of items on the list: " + size);
+
+        // Finding the index of "Ice Cream"
+        int iceCreamIndex = shoppingList.indexOf("Ice Cream");
+        System.out.println("Ice Cream is at index: " + iceCreamIndex);
+
+        // Removing an item (uh oh, someone decided no soda!)
+        shoppingList.remove("Soda");
+        System.out.println("Shopping list after removing Soda:");
+        System.out.println(shoppingList);
+
+        // Iterating through the list with a for-each loop
+        System.out.println("Checking off the items:");
+        for (String item : shoppingList) {
+            System.out.println("Got " + item);
+        }
+
+        // Clearing the list after the party
+        shoppingList.clear();
+        System.out.println("Is the shopping list empty after the party? " + shoppingList.isEmpty());
+
+        // Adding a new item post-party (we forgot to clean up!)
+        shoppingList.add("Cleaning Supplies");
+        System.out.println("Post-party shopping list:");
+        System.out.println(shoppingList);
+    }
+}
+
+
+```
+
+**LinkedList**
+Just like ArrayList, LinkedList is another class that implements the List interface. The main difference between them is how they store their elements.
+
+LinkedList stores elements in nodes, where each node knows about the next and previous node (with null for the first and last nodes).
+
+You can still use an index to get elements, but it’s not as efficient as ArrayList because it has to iterate from the start to the end to find the desired position, making it slower.
+
+Here's an example of how to use a LinkedList. Let's say we're managing a line of people waiting for the new ice cream shop to open
+
+```
+import java.util.LinkedList;
+
+public class LinkedListt {
+    public static void main(String[] args) {
+        LinkedList<String> queue = new LinkedList<>();
+
+        // People join the line
+        queue.add("Alice");
+        queue.add("Bob");
+        queue.add("Charlie");
+        queue.add("Diana");
+        queue.add("Eve");
+
+        System.out.println("The line for ice cream:");
+        System.out.println(queue);
+
+        // Peek at the first person in line without removing them
+        String firstPerson = queue.peek();
+        System.out.println("First person in line (peek): " + firstPerson);
+
+        // Bob gets impatient and leaves
+        queue.remove("Bob");
+        System.out.println("Line after Bob leaves:");
+        System.out.println(queue);
+
+        // Serve the first person in line
+        String servedPerson = queue.removeFirst();
+        System.out.println(servedPerson + " got served ice cream!");
+
+        // Peek again to see who's next
+        String nextPerson = queue.peek();
+        System.out.println("Next person in line (peek): " + nextPerson);
+
+        // Serve the next person
+        servedPerson = queue.removeFirst();
+        System.out.println(servedPerson + " got served ice cream!");
+
+        // Check the size of the line
+        int size = queue.size();
+        System.out.println("Number of people left in line: " + size);
+
+        // Clear the line because the ice cream shop ran out of ice cream
+        queue.clear();
+        System.out.println("Is the line empty now? " + queue.isEmpty());
+
+        // Adding a new line just for fun
+        queue.add("Frank");
+        System.out.println("Frank is now first in line:");
+        System.out.println(queue);
+
+        // Remove first and last (only Frank in this case)
+        queue.removeFirst();
+        System.out.println("Is the line empty after Frank is served? " + queue.isEmpty());
+    }
+}
+
+```
+
+**When to Use ArrayList and LinkedList?**
+ArrayList is perfect when you need a lot of random access operations since it’s super fast at getting elements by index. On the other hand, LinkedList is better for situations where you need to do a lot of adding and removing of elements.
+
+That’s it for now! Thanks for reading, and see you next time. Bye! 👋
+

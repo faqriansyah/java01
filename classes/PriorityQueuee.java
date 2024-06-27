@@ -11,17 +11,23 @@ public class PriorityQueuee {
         Buah.add("Durian");
         Buah.add("Langsat"); 
 
-        System.out.println("head:" + Buah.element()); // Mengeluarkana anggur
-        System.out.println("head:" + Buah.peek()); // Mengeluarkan anggur juga
+        // System.out.println("head:" + Buah.element()); // Mengeluarkana anggur
+        // System.out.println("head:" + Buah.peek()); // Mengeluarkan anggur juga
 
         System.out.println("iterating the Buah elements:");
         Iterator<String> itr = Buah.iterator();
         while (itr.hasNext()) {
             System.out.println(itr.next()   ); // datanya masih lengkap
         }
+
+        Separator.xsp();
         
-        Buah.remove();
-        Buah.poll();
+        System.out.println("Removing head of two elements : ");
+        System.out.println(Buah.remove());
+        System.err.println(Buah.poll());
+
+        Separator.xsp();
+
         System.out.println("after removing two elements:");
         Iterator<String> itr2 = Buah.iterator();
         while (itr2.hasNext()) {
